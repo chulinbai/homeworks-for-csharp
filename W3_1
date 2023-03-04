@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("请输入要做的运算：");
+            var op = Console.ReadKey();
+            char ch = op.KeyChar;
+            Console.WriteLine("\n请输入2个数字：");
+            string s = Console.ReadLine();
+            int num1 = Int32.Parse(s);
+            s = Console.ReadLine();
+            int num2 = Int32.Parse(s);
+            int ans = -1;
+
+            switch (ch)
+            {
+                case '+':
+                    ans = num1 + num2;
+                    break;  
+                case '-':
+                    ans = num1 - num2;
+                    break;
+                case '*':
+                    ans = num1 * num2;
+                    break;
+                case '/':
+                    ans = num1 / num2;
+                    break;
+                default:
+                    ans = -1;
+                    break;
+            }
+            Console.WriteLine(ans);
+        }
+    }
+}
