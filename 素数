@@ -1,0 +1,36 @@
+using System.Collections.Generic;
+public class Sushu
+{
+    private int num;
+    public void get_num()
+    {
+        Console.WriteLine("请输入一个数字：");
+        num = Console.Read()-'0';
+    }
+    public static void Main()
+    {
+        Sushu s = new Sushu();
+        s.get_num();
+        Dictionary<int, bool> dic = new Dictionary<int, bool>();
+        dic.Add(1, true);
+        for (int i=2; i<=s.num; i++)
+        {
+            if (s.num % i == 0)
+            {
+                dic.Add(i, true);
+                while(s.num % i == 0)
+                {
+                    s.num /= i;
+                }
+            }
+            if(s.num == 0 || s.num == 1)
+            {
+                break;
+            }
+        }
+        foreach(int i in dic.Keys)
+        {
+            Console.WriteLine(i);
+        }
+    }
+}
